@@ -22,7 +22,7 @@ const product = new Product(newProduct)
         .then(()=>{
             console.log(`Product was added to the database`);
             console.log(`${product}`);
-            res.redirect("/view");
+            res.redirect("/product/view");
         
         })
         .catch(err=>console.log(`Error : ${err}`));

@@ -1,1 +1,16 @@
-fgv xf fb d
+<h1>Product Listing</h1>
+ 
+ <section class="products-container">
+     {{#each lists}} 
+     <div>
+        {{this.productTitle}} &nbsp;&nbsp;
+        <a href="/task/edit/{{this._id}}">Edit</a>&nbsp;&nbsp;
+    </div>
+    {{else}}
+        No tasks in database 
+     {{/each}}
+</section>
+
+<div id="tasks-links-holder">
+    <a href="/">Home</a>
+</div>
