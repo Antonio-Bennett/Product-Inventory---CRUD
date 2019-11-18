@@ -55,4 +55,26 @@ router.get("/edit/:id",(req,res)=>
     .catch(err=>console.log(`Error : ${err}`));
 });
 
+router.put("/edit/:id",(req,res)=>
+{
+    Product.findById(req.params.id)
+    .then((Product)=>{
+
+    Product.productTitle=req.body.pTitle,
+    Product.productPrice=req.body.pPrice,
+    Product.productQuantity=req.body.pQuantityOnHand,
+    Product.productDescription=req.body.pDescription,
+    Product.productTax=req.body.pTax
+
+        Product.save()
+
+        .then(()=>{
+           res.redirect("/product/view") 
+        })
+        .catch(err=>console.log(`Error : ${err}`));
+
+    })
+    .catch(err=>console.log(`Error : ${err}`));
+});
+
 module.exports=router;
