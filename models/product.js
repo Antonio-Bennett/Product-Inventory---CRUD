@@ -24,7 +24,7 @@ const productSchema = new Schema({
   },
   productTax:
   {
-      type:Boolean,
+      type:String,
       required:true
   },
   dateCreated :
@@ -34,6 +34,6 @@ const productSchema = new Schema({
   }
 });
 
-const productModel =mongoose.model("Product",productSchema);
+const productModel=mongoose.model("Product",productSchema);
 
 module.exports=productModel;

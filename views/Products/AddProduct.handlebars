@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="Add Form">
+      <form action="/product/addProduct" method="POST">
+          Product Title: <input type="text" name="pTitle" required><br>
+          Product Price: <input type="text" name="pPrice" required><br>
+          Quantity On Hand: <input type="text" name="pQuantityOnHand" required><br>
+          Product Description: <input type="textarea" name="pDescription" required><br>
+          Taxable Item <input type="radio" name="pTax" value="yes" required>Yes
+          <input type="radio" name="pTax" value="no" required>No <br>
+
+          <input type="submit" value="Add Product">
+      </form>
+    </div>
+
+</body>
+</html>

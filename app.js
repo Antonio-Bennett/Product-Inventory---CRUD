@@ -25,7 +25,7 @@ app.engine("handlebars",exphbs());
 app.set("view engine","handlebars");
 
 
-const MONGO_DB_URL=`mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@cluster0-agoxt.mongodb.net/${process.env.MONGO_DB_DATABASE_NAME}?retryWrites=true&w=majority`;
+const MONGO_DB_URL=`mongodb+srv://abennett13:9Kz2gd-iY%24.%25M.B@test1-91w38.mongodb.net/test4?retryWrites=true&w=majority`;
  
 
 mongoose.connect(MONGO_DB_URL, {useNewUrlParser: true,useUnifiedTopology: true })
@@ -42,5 +42,4 @@ const port = process.env.PORT || 3000;
 
 app.listen(port,()=>{
     console.log(`Your Web Server has been connected`);
-    
 });
