@@ -1,10 +1,15 @@
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="products-view">
 <h1>Product Listing</h1>
  
  <section class="products-container">
      {{#each lists}} 
-     <div>
-        {{this.productTitle}} &nbsp;&nbsp;
-        <a href="/product/edit/{{this._id}}">Edit</a>&nbsp;&nbsp;
+     <div id="viewP">
+        <span class="products-view-name">{{this.productTitle}}</span> 
+        <a class="editbutt" href="/product/edit/{{this._id}}">Edit</a>
     </div>
     {{else}}
         No tasks in database 
@@ -12,5 +17,8 @@
 </section>
 
 <div id="tasks-links-holder">
+    <br>
     <a href="/">Home</a>
 </div>
+</div>
+</html>

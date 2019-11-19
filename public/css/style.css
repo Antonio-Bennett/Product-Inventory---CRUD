@@ -1,5 +1,76 @@
 #home{
     border-style: solid;
-    border-radius: 4px;
+    border-radius: 30px;
     text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.homebutton{
+    padding: 30px;
+}
+
+#homepage{
+    text-align: center;
+}
+
+.products-view{
+border-style: solid;
+border-radius: 30px;
+width: 50%;
+margin-left: 25%;
+text-align: center;
+}
+.products-view-name{
+    text-align: left;
+    margin-left: 22%;
+}
+
+.editbutt{
+    float: right;
+    margin-right: 35%;
+}
+
+.aelayout{
+    border-style: solid;
+border-radius: 30px;
+width: 60%;
+margin-left: 20%;
+text-align: center;
+}
+
+#canel{
+    padding: 20px;
+}
+
+.inputdesc{
+    text-align: left;
+    display: inline;
+    margin-right: 5%;
+}
+.inputf{
+    float: right;
+    margin-right: 15%;
+}
+
+.taxdesc{
+    display: inline;
+    text-align: left;
+    margin-left: 13%;
+}
+
+#yess{
+    margin-left: 31%;
+}
+
+
+#noo{
+    margin-left: 9%;
+}
+
+.errors{
+    padding :2px 2px;
+    color :#ff0000;
+    margin:0 0 3px 0;
+    background-color:pink; 
 }

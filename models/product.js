@@ -25,7 +25,7 @@ const productSchema = new Schema({
   },
   productTax:
   {
-      type:String,
+      type:Boolean,
       required:true
   },
   dateCreated :

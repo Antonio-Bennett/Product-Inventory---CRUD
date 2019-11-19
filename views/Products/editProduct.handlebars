@@ -1,3 +1,7 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="aelayout">
 <h1>Edit Product</h1>
 
     {{#each error}}
@@ -5,17 +9,20 @@
 <div class="errors">{{this}}</div>
 
 {{/each}}
-    <form method="POST" action="/product/edit/{{productDoc._id}}/?_method=PUT">
-          Product Title: <input type="text" name="pTitle" value="{{productDoc.productTitle}}"><br>
-          Product Price: <input type="text" name="pPrice" value="{{productDoc.productPrice}}"><br>
-          Quantity On Hand: <input type="text" name="pQuantityOnHand" value="{{productDoc.productQuantity}}"><br>
-          Product Description: <input type="textarea" name="pDescription" value="{{productDoc.productDescription}}"><br>
+
+    <form method="POST" action="/product/edit/{{productDoc._id}}/?_method=PUT" id="editform">
+          <p class="inputdesc">Product Title:</p> <input class="inputf" type="text" name="pTitle" value="{{productDoc.productTitle}}"><br>
+          <br><p class="inputdesc">Product Price:</p> <input class="inputf" type="text" name="pPrice" value="{{productDoc.productPrice}}"><br>
+          <br><p class="inputdesc">Quantity On Hand:</p> <input class="inputf" type="text" name="pQuantityOnHand" value="{{productDoc.productQuantity}}"><br>
+          <br><p class="inputdesc">Product Description:</p> <textarea class="inputf" form="editform" name="pDescription" required>{{productDoc.productDescription}}</textarea><br>
           {{#if productDoc.productTax}}
-          Taxable Item <input type="radio" name="pTax" value="yes" required checked>Yes
-          <input type="radio" name="pTax" value="no" required>No <br>
+         <br><p class="taxdesc">Taxable Item</p> <span id="yess">Yes</span><input id="yessbutt" type="radio" name="pTax" value="true" required checked>
+          <span id="noo">No</span><input  type="radio" name="pTax" value="false" required> <br>
           {{else}}
-          Taxable Item <input type="radio" name="pTax" value="true" required>Yes
-          <input type="radio" name="pTax" value="false" required checked>No <br>
+          <br><p class="taxdesc">Taxable Item</p> <span id="yess">Yes</span><input id="yessbutt" type="radio" name="pTax" value="true" required>
+          <span id="noo">No</span><input  type="radio" name="pTax" value="false" required checked> <br>
           {{/if}}
-          <input type="submit" value="Add Product">
+          <br><input type="submit" value="Edit Product">
       </form>
+      </div>
+      </html>

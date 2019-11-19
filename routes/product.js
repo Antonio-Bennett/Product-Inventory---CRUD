@@ -34,7 +34,7 @@ const product = new Product(newProduct)
             Product.findOne({productTitle:req.body.pTitle})
             .then(result=>{
                 error.push(`${req.body.pTitle} ALREADY IN DATABASE`)
-                res.render(`Products/editProduct`,{
+                res.render("Products/AddProduct",{
                     error: error
                 })
             })
@@ -93,7 +93,7 @@ router.put("/edit/:id",(req,res)=>
             Product.findOne({productTitle:req.body.pTitle})
             .then(result=>{
                 x.push(`${req.body.pTitle} ALREADY IN DATABASE`)
-                res.render(`Products/editProduct`,{
+                res.render("Products/editProduct",{
                     productDoc:product,
                     error: x
                 })

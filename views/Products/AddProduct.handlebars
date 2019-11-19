@@ -6,24 +6,27 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    {{#each error}}
+ 
+    <div class="aelayout">
+        <h1>Add Product</h1>
+           {{#each error}}
 
-<div class="errors">{{this}}</div>
+    <div class="errors">{{this}}</div>
 
-{{/each}}
-
+    {{/each}}
     <div id="Add Form">
-      <form action="/product/addProduct" method="POST">
-          Product Title: <input type="text" name="pTitle" required><br>
-          Product Price: <input type="text" name="pPrice" required><br>
-          Quantity On Hand: <input type="text" name="pQuantityOnHand" required><br>
-          Product Description: <input type="textarea" name="pDescription" required><br>
-          Taxable Item <input type="radio" name="pTax" value="true" required>Yes
-          <input type="radio" name="pTax" value="false" required>No <br>
+      <form action="/product/addProduct" method="POST" id="addform">
+          <p class="inputdesc">Product Title:</p>  <input class="inputf" type="text" name="pTitle" required><br>
+          <br><p class="inputdesc">Product Price:</p> <input class="inputf" type="text" name="pPrice" required><br>
+          <br><p class="inputdesc">Quantity On Hand:</p> <input class="inputf" type="text" name="pQuantityOnHand" required><br>
+          <br><p class="inputdesc">Product Description:</p> <textarea class="inputf" form="addform" name="pDescription" required></textarea><br>
+          <br><p class="taxdesc">Taxable Item</p> <span id="yess">Yes</span><input id="yessbutt" type="radio" name="pTax" value="true" required>
+          <span id="noo">No</span><input  type="radio" name="pTax" value="false" required> <br>
 
-          <input type="submit" value="Add Product">
+          <br><input type="submit" value="Add Product">
       </form>
+      <a href="/"><button id="cancel">Cancel</button></a>
     </div>
-
+</div>
 </body>
 </html>
