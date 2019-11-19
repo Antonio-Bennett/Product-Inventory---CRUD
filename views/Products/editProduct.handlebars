@@ -1,5 +1,10 @@
 <h1>Edit Product</h1>
 
+    {{#each error}}
+
+<div class="errors">{{this}}</div>
+
+{{/each}}
     <form method="POST" action="/product/edit/{{productDoc._id}}/?_method=PUT">
           Product Title: <input type="text" name="pTitle" value="{{productDoc.productTitle}}"><br>
           Product Price: <input type="text" name="pPrice" value="{{productDoc.productPrice}}"><br>

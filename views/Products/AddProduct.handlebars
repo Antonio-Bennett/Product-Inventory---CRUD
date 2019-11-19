@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    {{#each error}}
+
+<div class="errors">{{this}}</div>
+
+{{/each}}
+
     <div id="Add Form">
       <form action="/product/addProduct" method="POST">
           Product Title: <input type="text" name="pTitle" required><br>

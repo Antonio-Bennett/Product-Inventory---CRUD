@@ -17,6 +17,9 @@ const newProduct=
     productTax:req.body.pTax
 }
 
+const error = [];
+
+    
 const product = new Product(newProduct)
         product.save()
         .then(()=>{
@@ -25,7 +28,18 @@ const product = new Product(newProduct)
             res.redirect("/product/view");
         
         })
-        .catch(err=>console.log(`Error : ${err}`));
+        .catch((err)=>
+        {
+            console.log(`${err}`);
+            Product.findOne({productTitle:req.body.pTitle})
+            .then(result=>{
+                error.push(`${req.body.pTitle} ALREADY IN DATABASE`)
+                res.render(`Products/editProduct`,{
+                    error: error
+                })
+            })
+            .catch(err=>console.log(`Error : ${err}`));
+        });
   
 });
 
@@ -58,20 +72,35 @@ router.get("/edit/:id",(req,res)=>
 router.put("/edit/:id",(req,res)=>
 {
     Product.findById(req.params.id)
-    .then((Product)=>{
+    .then((product)=>{
 
-    Product.productTitle=req.body.pTitle,
-    Product.productPrice=req.body.pPrice,
-    Product.productQuantity=req.body.pQuantityOnHand,
-    Product.productDescription=req.body.pDescription,
-    Product.productTax=req.body.pTax
+    product.productTitle=req.body.pTitle,
+    product.productPrice=req.body.pPrice,
+    product.productQuantity=req.body.pQuantityOnHand,
+    product.productDescription=req.body.pDescription,
+    product.productTax=req.body.pTax
 
-        Product.save()
+    const x = [];
+
+        product.save()
 
         .then(()=>{
            res.redirect("/product/view") 
         })
-        .catch(err=>console.log(`Error : ${err}`));
+        .catch((err)=>
+        {
+            console.log(`${err}`);
+            Product.findOne({productTitle:req.body.pTitle})
+            .then(result=>{
+                x.push(`${req.body.pTitle} ALREADY IN DATABASE`)
+                res.render(`Products/editProduct`,{
+                    productDoc:product,
+                    error: x
+                })
+            })
+            .catch(err=>console.log(`Error : ${err}`));
+            
+        });
 
     })
     .catch(err=>console.log(`Error : ${err}`));

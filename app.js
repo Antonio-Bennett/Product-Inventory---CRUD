@@ -27,7 +27,7 @@ app.set("view engine","handlebars");
 
 const MONGO_DB_URL=`mongodb+srv://abennett13:9Kz2gd-iY%24.%25M.B@test1-91w38.mongodb.net/test4?retryWrites=true&w=majority`;
  
-
+mongoose.set('useCreateIndex', true);
 mongoose.connect(MONGO_DB_URL, {useNewUrlParser: true,useUnifiedTopology: true })
 .then(()=>{
 
